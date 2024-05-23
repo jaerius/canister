@@ -1,0 +1,38 @@
+{
+  "canisters": {
+    "helloWorld_backend": {
+      "build": "npx azle helloWorld_backend",
+      "candid": "src/helloWorld_backend/helloWorld_backend.did",
+      "gzip": true,
+      "main": "src/helloWorld_backend/src/index.ts",
+      "tech_stack": {
+        "cdk": {
+          "azle": {}
+        },
+        "language": {
+          "typescript": {}
+        }
+      },
+      "type": "custom",
+      "wasm": ".azle/helloWorld_backend/helloWorld_backend.wasm"
+    },
+    "helloWorld_frontend": {
+      "dependencies": [
+        "helloWorld_backend"
+      ],
+      "source": [
+        "src/helloWorld_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "helloWorld_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
